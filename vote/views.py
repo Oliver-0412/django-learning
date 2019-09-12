@@ -14,5 +14,6 @@ def show_teachers(request):
         subject = Subject.objects.get(no=sno)
         teachers = subject.teacher_set.all()
         return render(request, 'teachers.html', {'subject': subject, 'teachers': teachers})
-    except (KeyError, ValueError, Subject.DoesNotExist):
+    except (KeyError, ValueError, Subject.DoesNotExist) as e:
+        print(str(e))
         return redirect('/')
