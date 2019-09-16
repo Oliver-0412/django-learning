@@ -21,3 +21,9 @@ urlpatterns = [
     path('hrs/',include('hrs.urls')),
     path('vote/',include('vote.urls')),
 ]
+
+if settings.DEBUG:
+    
+    import debug_toolbar
+
+    urlpatterns.insert(0, path('__debug__/', include(debug_toolbar.urls)))
