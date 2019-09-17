@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@3hd6_c8%jvw3w&7)7k3rqq7i+&i5tq&=(9o6#@&wopzgp!j7m'
+SECRET_KEY = 'g(=4v70i&t(2g51*0o=n7rubf2sqe)fzf7($0h4s$4_w#58i^^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'vote',
-    'debug_toolbar',
+    'vote'
 ]
 
 MIDDLEWARE = [
@@ -49,23 +48,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
-DEBUG_TOOLBAR_CONFIG = {
-    # 引入jQuery库
-    'JQUERY_URL': 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js',
-    # 工具栏是否折叠
-    'SHOW_COLLAPSED': True,
-    # 是否显示工具栏
-    'SHOW_TOOLBAR_CALLBACK': lambda x: True,
-}
 ROOT_URLCONF = 'oa.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,9 +82,10 @@ DATABASES = {
         'PORT': 3306,
         'USER': 'root',
         'PASSWORD': 'hello123',
+        'CHARSET': 'utf8',
+        'TIME_ZONE': 'Asia/Chongqing'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -120,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'Asia/Shanghai'
+TIME_ZONE = 'Asia/Chongqing'
 
 USE_I18N = True
 
